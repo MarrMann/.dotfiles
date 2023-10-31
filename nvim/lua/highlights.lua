@@ -1,5 +1,3 @@
-print('highlights loaded')
-
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.winblend = 0

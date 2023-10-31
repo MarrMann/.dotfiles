@@ -1,5 +1,3 @@
-print('maps loaded!')
-
 local keymap = vim.keymap
 
 -- do not yank with x
@@ -10,3 +8,6 @@ keymap.set('n', '<a-j>', ':m+<CR>==')
 keymap.set('n', '<a-k>', ':m .-2<CR>==')
 keymap.set('v', '<a-j>', ":m '>+1<CR>gv=gv")
 keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+
+-- remove space normal mapping so it can be used as leader
+keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
