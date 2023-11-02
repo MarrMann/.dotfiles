@@ -4,7 +4,7 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
-vim.wo.number = true
+vim.wo.number = true -- line numbers
 
 vim.opt.autoindent = true
 vim.opt.backspace = 'start,eol,indent'
@@ -13,7 +13,7 @@ vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.breakindent = true
 vim.opt.cmdheight = 1
 vim.opt.expandtab = true -- expand tabs into space
-vim.opt.hlsearch = true -- highlight words on search
+vim.opt.hlsearch = true  -- highlight words on search
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
 vim.opt.laststatus = 2
@@ -22,11 +22,11 @@ vim.opt.scrolloff = 10
 vim.opt.shell = 'fish'
 vim.opt.shiftwidth = 2 -- indentation width
 vim.opt.showcmd = true
-vim.opt.si = true -- smart indent, remembers indent from last line
+vim.opt.si = true      -- smart indent, remembers indent from last line
 vim.opt.smarttab = true
 vim.opt.tabstop = 2
 vim.opt.title = true
-vim.opt.wildignore:append {'*/node_modules/*' }
+vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.wrap = true -- wrap lines
 
 -- undercurl
@@ -42,4 +42,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
-

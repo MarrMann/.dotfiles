@@ -3,6 +3,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+local lspkind = require 'lspkind'
 luasnip.config.setup {}
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -35,5 +36,12 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+      ellipsis_char = '...',
+    })
   },
 }
