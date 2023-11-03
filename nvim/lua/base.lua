@@ -5,6 +5,9 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
 vim.wo.number = true -- line numbers
+vim.o.mouse = 'a'    -- enable mouse mode
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.opt.autoindent = true
 vim.opt.backspace = 'start,eol,indent'

@@ -7,6 +7,9 @@ return {
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
 
+  -- Git plugin to use git from nvim using :Git
+  'tpope/vim-fugitive',
+
   -- LSP Config & plugins, settings are in plugin/lspconfig.lua
   {
     "neovim/nvim-lspconfig",
@@ -100,4 +103,21 @@ return {
       },
     },
   },
+
+  {
+    'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+
+  { 'norcalli/nvim-colorizer.lua' }, -- colorizes hexcode colors such as those defined in .css files
+
+  -- prettier and null-ls for formatting
+  { 'jose-elias-alvarez/null-ls.nvim' },
+  { 'MunifTanjim/prettier.nvim' },
+
+  -- Copilot
+  { 'github/copilot.vim' },
+
+  -- zen mode for nvim
+  { 'folke/zen-mode.nvim' },
 }
