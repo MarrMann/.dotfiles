@@ -8,7 +8,7 @@ return {
   "nvim-lualine/lualine.nvim",
 
   -- Git plugin to use git from nvim using :Git
-  'tpope/vim-fugitive',
+  "tpope/vim-fugitive",
 
   -- LSP Config & plugins, settings are in plugin/lspconfig.lua
   {
@@ -19,26 +19,26 @@ return {
       "williamboman/mason-lspconfig.nvim",
 
       -- status indicator for lsp
-      { 'j-hui/fidget.nvim', tag = 'legacy', event = 'LspAttach', opts = {} },
+      { "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach", opts = {} },
 
       -- Plugin dev help with signature help, documentation, and completions for the nvim lua API
-      'folke/neodev.nvim',
+      "folke/neodev.nvim",
     },
   },
 
   -- Autocompletion
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
       -- Snippet engine
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
 
       -- LSP autocompletion
-      'hrsh7th/cmp-nvim-lsp',
+      "hrsh7th/cmp-nvim-lsp",
 
       -- Some user friendly snippets
-      'rafamadriz/friendly-snippets',
+      "rafamadriz/friendly-snippets",
     },
   },
 
@@ -50,74 +50,107 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 400
     end,
-    opts = {}
+    opts = {},
   },
 
   -- vscode like symbols for cmp
-  { 'lewis6991/gitsigns.nvim' },
+  { "lewis6991/gitsigns.nvim" },
 
   {
     -- Add indentation guides, even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     opts = {},
   },
 
   -- gc to comment line(s)
-  { 'numToStr/Comment.nvim',  opts = {} },
+  { "numToStr/Comment.nvim",  opts = {} },
 
   -- Enables vscode-like icons for cmp
-  { 'onsails/lspkind.nvim' },
+  { "onsails/lspkind.nvim" },
 
   -- Better syntax highlighting
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    build = ':TSUpdate'
+    build = ":TSUpdate",
   },
 
   -- Pair parentheses, quotes, and so on
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {},
   },
 
   -- Autopairs for html tags such as <div>
-  { 'windwp/nvim-ts-autotag' },
+  { "windwp/nvim-ts-autotag" },
 
   {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
     dependencies = {
-      'nvim-lua/plenary.nvim', -- common utilities
-      'nvim-telescope/telescope-file-browser.nvim',
+      "nvim-lua/plenary.nvim", -- common utilities
+      "nvim-telescope/telescope-file-browser.nvim",
       {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
         cond = function()
-          return vim.fn.executable 'make' == 1
+          return vim.fn.executable("make") == 1
         end,
       },
     },
   },
 
   {
-    'akinsho/bufferline.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons'
+    "akinsho/bufferline.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
-  { 'norcalli/nvim-colorizer.lua' }, -- colorizes hexcode colors such as those defined in .css files
+  { "norcalli/nvim-colorizer.lua" }, -- colorizes hexcode colors such as those defined in .css files
 
   -- prettier and null-ls for formatting
-  { 'jose-elias-alvarez/null-ls.nvim' },
-  { 'MunifTanjim/prettier.nvim' },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  { "MunifTanjim/prettier.nvim" },
 
   -- Copilot
-  { 'github/copilot.vim' },
+  { "github/copilot.vim" },
 
   -- zen mode for nvim
-  { 'folke/zen-mode.nvim' },
+  { "folke/zen-mode.nvim" },
+
+  {
+    "mfussenegger/nvim-dap",
+
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+
+      keys = {
+        {
+          "<leader>du",
+          function()
+            require("dapui").toggle({})
+          end,
+          desc = "Dap UI",
+        },
+        {
+          "<leader>de",
+          function()
+            require("dapui").eval()
+          end,
+          desc = "Dap eval",
+          mode = { "n", "v" },
+        },
+      },
+    },
+  },
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "Issafalcon/neotest-dotnet",
+    },
+  },
 }

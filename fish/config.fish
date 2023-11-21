@@ -1,6 +1,7 @@
 if type -q exa
   alias ll "exa -l -g --icons"
   alias lla "ll -a"
+  alias etodo "nvim /Users/$(whoami)/Documents/Obsidian\ Vault/Daily\ TODO.md"
 end
 
 set -gx TERM xterm-256color
