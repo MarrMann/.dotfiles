@@ -3,4 +3,4 @@ fish/conf.d/*
 fish_variables
 *.tmp.*
 fish/functions/
-
+github-copilot/
