@@ -111,8 +111,8 @@ return {
 
   { "norcalli/nvim-colorizer.lua" }, -- colorizes hexcode colors such as those defined in .css files
 
-  -- prettier and null-ls for formatting
-  { "jose-elias-alvarez/null-ls.nvim" },
+  -- null-ls for formatting
+  { "nvimtools/none-ls.nvim" },
   { "MunifTanjim/prettier.nvim" },
 
   -- Copilot
